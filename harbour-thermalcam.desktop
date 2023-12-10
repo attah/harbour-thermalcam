@@ -8,4 +8,4 @@ Name=ThermalCam
 [X-Sailjail]
 OrganizationName=net.attah
 ApplicationName=thermalcam
-Sandboxing=Disabled
+Permissions=Pictures

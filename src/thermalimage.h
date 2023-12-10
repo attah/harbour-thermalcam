@@ -7,17 +7,18 @@
 #include <thread>
 #include <functional>
 #include <QDebug>
+#include <mutex>
 
 class ThermalImage : public QQuickPaintedItem
 {
     Q_OBJECT
 
-    Q_PROPERTY(QImage image READ getImage WRITE setImage NOTIFY imageChanged)
-    Q_PROPERTY(bool valid READ isValid NOTIFY imageChanged)
 public:
     ThermalImage();
 
     void paint(QPainter *painter);
+
+    Q_INVOKABLE void save();
 
 signals:
     void imageChanged();
@@ -36,6 +37,7 @@ private:
 
     QImage _image;
     std::thread _thread;
+    std::mutex _mutex;
 };
 
 #endif // THERMALIMAGE_H

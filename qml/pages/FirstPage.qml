@@ -19,4 +19,16 @@ Page {
         id: thermal
         anchors.fill: parent
     }
+
+    IconButton
+    {
+        icon.source: "image://theme/icon-m-dot"
+        icon.width: Theme.iconSizeLarge
+        icon.height: Theme.iconSizeLarge
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.right: parent.right
+        onClicked: thermal.save();
+        anchors.rightMargin: Theme.iconSizeLarge
+    }
+
 }
