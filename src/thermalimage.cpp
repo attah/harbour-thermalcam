@@ -7,6 +7,7 @@
 
 ThermalImage::ThermalImage()
 {
+    connect(this, &ThermalImage::visibleChanged, this, &ThermalImage::onVisibleChanged);
 
     _thread = std::thread([this]()
               {

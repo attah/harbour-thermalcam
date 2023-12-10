@@ -29,6 +29,18 @@ public slots:
         update();
     }
 
+    void onVisibleChanged()
+    {
+        if(!isVisible())
+        {
+            _mutex.lock();
+        }
+        else
+        {
+            _mutex.unlock();
+        }
+    }
+
 private:
     QImage getImage() const;
     void setImage(const QImage &image);
