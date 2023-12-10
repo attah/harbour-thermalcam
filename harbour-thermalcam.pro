@@ -14,12 +14,19 @@ TARGET = harbour-thermalcam
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-thermalcam.cpp
+PKGCONFIG += opencv4
+
+LIBS += -lstdc++fs
+
+QMAKE_CXXFLAGS += -std=c++17
+
+SOURCES += src/harbour-thermalcam.cpp \
+           cpp-thermalcam/thermalcam.cpp \
+           src/thermalimage.cpp
 
 DISTFILES += qml/harbour-thermalcam.qml \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
     rpm/harbour-thermalcam.changes.in \
     rpm/harbour-thermalcam.changes.run.in \
     rpm/harbour-thermalcam.spec \
@@ -37,3 +44,6 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-thermalcam-de.ts
+
+HEADERS += \
+    src/thermalimage.h

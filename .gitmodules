@@ -1,0 +1,3 @@
+[submodule "cpp-thermalcam"]
+	path = cpp-thermalcam
+	url = https://github.com/attah/cpp-thermalcam.git
