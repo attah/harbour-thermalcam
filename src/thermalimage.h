@@ -42,10 +42,6 @@ public slots:
     }
 
 private:
-    QImage getImage() const;
-    void setImage(const QImage &image);
-
-    bool isValid() const;
 
     QImage _image;
     std::thread _thread;
