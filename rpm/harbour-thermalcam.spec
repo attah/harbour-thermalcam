@@ -3,8 +3,8 @@ Name:       harbour-thermalcam
 Summary:    ThermalCam
 Version:    0.1
 Release:    1
-License:    LICENSE
-URL:        http://example.org/
+License:    GPL3
+URL:        https://github.com/attah/harbour-thermalcam
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
