@@ -1,7 +1,7 @@
 Name:       harbour-thermalcam
 
 Summary:    ThermalCam
-Version:    0.1
+Version:    0
 Release:    1
 License:    GPLv3
 URL:        https://github.com/attah/harbour-thermalcam
@@ -15,15 +15,16 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  opencv-devel
 
 %description
-Short description of my Sailfish OS Application
-
+Simple thermal camera viewer app for Topdon TC001.
+Probaly works with, or can be made to work with, other similar cameras like InfiRay.
+No guarantees though.
 
 %prep
 %setup -q -n %{name}-%{version}
 
 %build
 
-%qmake5 
+%qmake5
 
 %make_build
 
