@@ -14,7 +14,7 @@ ThermalImage::ThermalImage()
                 cv::VideoCapture captureDevice = find_camera();
                 cv::Mat imageData;
 
-                while(do_capture(captureDevice, imageData, boundingRect().width(), boundingRect().height()))
+                while(do_capture(captureDevice, imageData, 1920, 1080))
                 {
                      QImage tmp = QImage(imageData.data, imageData.cols, imageData.rows, imageData.step1(), QImage::Format_RGB888).rgbSwapped();
                      _mutex.lock();
@@ -27,9 +27,11 @@ ThermalImage::ThermalImage()
 
 void ThermalImage::paint(QPainter *painter)
 {   
-    int x = (boundingRect().width()-_image.width())/2;
-    int y = (boundingRect().height()-_image.height())/2;
+    qreal scale = std::min(boundingRect().height()/_image.height(), boundingRect().width()/_image.width());
+    int x = (boundingRect().width()-_image.width()*scale)/(2*scale);
+    int y = (boundingRect().height()-_image.height()*scale)/(2*scale);
     _mutex.lock();
+    painter->scale(scale, scale);
     painter->drawImage(QPoint {x, y}, _image);
     _mutex.unlock();
 }
