@@ -22,7 +22,7 @@ Page {
 
     IconButton
     {
-        icon.source: "image://theme/icon-m-dot"
+        icon.source: "image://theme/icon-m-dot?#ffffff"
         icon.width: Theme.iconSizeLarge
         icon.height: Theme.iconSizeLarge
         anchors.verticalCenter: parent.verticalCenter
