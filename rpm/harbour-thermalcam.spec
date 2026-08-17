@@ -15,9 +15,20 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  opencv-devel
 
 %description
-Simple thermal camera viewer app for Topdon TC001.
-Probaly works with, or can be made to work with, other similar cameras like InfiRay.
-No guarantees though.
+Simple thermal camera viewer app for Topdon TC001, InfiRay P2 Pro and similar devices.
+
+%if "%{?vendor}" == "chum"
+PackageName: ThermalCam
+Type: desktop-application
+DeveloperName: attah
+Categories:
+ - Media
+Custom:
+  Repo: https://github.com/attah/harbour-thermalcam
+Icon: https://raw.githubusercontent.com/attah/harbour-thermalcam/master/harbour-thermalcam.svg
+Url:
+  Homepage: https://github.com/attah/harbour-thermalcam
+%endif
 
 %prep
 %setup -q -n %{name}-%{version}
