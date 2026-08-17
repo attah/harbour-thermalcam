@@ -25,7 +25,7 @@ Categories:
  - Media
 Custom:
   Repo: https://github.com/attah/harbour-thermalcam
-Icon: https://raw.githubusercontent.com/attah/harbour-thermalcam/master/harbour-thermalcam.svg
+Icon: https://raw.githubusercontent.com/attah/harbour-thermalcam/master/icons/172x172/harbour-thermalcam.png
 Url:
   Homepage: https://github.com/attah/harbour-thermalcam
 %endif
